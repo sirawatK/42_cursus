@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 16:09:44 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/24 16:09:44 by sikulnok         ###   ########.fr       */
+/*   Created: 2023/08/24 19:05:05 by sikulnok          #+#    #+#             */
+/*   Updated: 2023/08/24 19:05:05 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	size_t	i;
+
+	i = 0;
+	while (i < n)
 	{
-		return (1);
+		*((unsigned char *)s + i) = c;
+		i++;
 	}
-	return (0);
+	return (s);
 }

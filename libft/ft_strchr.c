@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 18:50:28 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/25 21:12:08 by sikulnok         ###   ########.fr       */
+/*   Created: 2023/08/25 20:56:38 by sikulnok          #+#    #+#             */
+/*   Updated: 2023/08/25 21:04:08 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strchr(const char *str, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		i++;
+		if (*str == c)
+		{
+			return ((char *)str);
+		}
+		str++;
 	}
-	return (i);
+	return (0);
 }

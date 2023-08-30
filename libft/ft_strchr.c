@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: sikulnok <sikulnok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 20:56:38 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/25 21:04:08 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/08/30 23:15:47 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ char	*ft_strchr(const char *str, int c)
 		}
 		str++;
 	}
+	if (c == '\0')
+		return ((char *)str);
 	return (0);
 }

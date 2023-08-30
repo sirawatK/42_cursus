@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: sikulnok <sikulnok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 12:27:41 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/25 12:27:41 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/08/30 23:12:51 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	char		*last_d;
 	const char	*last_s;
 
+	if (dst == src || !n)
+		return (dst);
 	d = dst;
 	s = src;
 	if (d < s)

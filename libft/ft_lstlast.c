@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
+/*   By: sikulnok <sikulnok@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:11:23 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/28 20:11:23 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/08/30 23:40:13 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*curr;
 
 	curr = lst;
-	while (curr->next)
+	while (curr && curr->next)
 	{
 		curr = curr->next;
 	}
@@ -35,5 +35,5 @@ int main(void)
     ft_lstadd_front(&list, node2);
     ft_lstadd_front(&list, node1);
 	t_list *last = ft_lstlast(list);
-	printf("%s",(char *)last->content);
+	printf("%s\n",(char *)last->content);
 }*/

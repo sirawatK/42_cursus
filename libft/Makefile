@@ -6,7 +6,7 @@
 #    By: sikulnok <sikulnok@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 22:18:52 by sikulnok          #+#    #+#              #
-#    Updated: 2023/08/30 23:47:07 by sikulnok         ###   ########.fr        #
+#    Updated: 2023/08/31 19:58:07 by sikulnok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,20 +58,20 @@ BNS_OBJS = $(BNS_SRCS:%.c=%.o)
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-$(NAME):
+$(NAME) :
 	$(CC) $(FLAGS) -c $(SRCS) -I ./
 	ar rc $(NAME) $(OBJS)
 
-all: $(NAME)
+all: $(NAME) 
 
-bonus: $(NAME)
+bonus: 
 	cc $(FLAGS) -c $(BNS_SRCS) -I ./
 	ar rc $(NAME) $(BNS_OBJS)
 
 clean:
-	rm -f $(OBJS) $(BNS_OBJS)
+	rm -rf $(OBJS) $(BNS_OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all

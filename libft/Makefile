@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sikulnok <sikulnok@student.42.fr>          +#+  +:+       +#+         #
+#    By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 22:18:52 by sikulnok          #+#    #+#              #
-#    Updated: 2023/08/31 19:58:07 by sikulnok         ###   ########.fr        #
+#    Updated: 2023/09/01 23:44:23 by sikulnok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,12 @@ SRCS 	= 	  ft_memset.c \
 			  ft_atoi.c \
 			  ft_calloc.c \
 			  ft_strdup.c \
+			  ft_substr.c \
+			  ft_strjoin.c \
+			  ft_strtrim.c \
+			  ft_split.c \
+			  ft_itoa.c \
+			  ft_strnstr.c \
 			  ft_isalpha.c \
 			  ft_isdigit.c \
 			  ft_isalnum.c \
@@ -37,6 +43,7 @@ SRCS 	= 	  ft_memset.c \
 			  ft_tolower.c \
 			  ft_calloc.c \
 			  ft_strmapi.c \
+			  ft_striteri.c \
 			  ft_putchar_fd.c \
 			  ft_putstr_fd.c \
 			  ft_putendl_fd.c \

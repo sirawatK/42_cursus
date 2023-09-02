@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 21:13:42 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/02 14:24:36 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/02 16:12:27 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *str, int c)
 		}
 		str++;
 	}
-	if (c == '\0')
+	if (cast == '\0')
 	{
 		return ((char *)str);
 	}

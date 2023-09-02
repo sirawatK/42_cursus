@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 13:44:32 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/01 20:20:50 by sikulnok         ###   ########.fr       */
+/*   Created: 2023/09/02 21:24:22 by sikulnok          #+#    #+#             */
+/*   Updated: 2023/09/02 23:38:15 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 int	in_c(char s, char c)
 {
 	if (s == c)
-	{
 		return (1);
-	}
 	return (0);
 }
 
-char	**creat_strptr(const char *s, char c)
+char	**creat_strptr(const char *s, char c, int *size)
 {
 	int		in_word;
 	size_t	strptr_len;
@@ -31,78 +29,87 @@ char	**creat_strptr(const char *s, char c)
 	in_word = 0;
 	while (*s)
 	{
-		if (!in_c(*s, c))
+		if (!in_c(*s, c) && in_word == 0)
 		{
-			if (in_word == 0)
-			{
-				in_word = 1;
-				strptr_len++;
-			}
+			in_word = 1;
+			strptr_len++;
 		}
-		else
+		else if (in_c(*s, c))
 			in_word = 0;
 		s++;
 	}
 	temp = (char **)malloc(sizeof(char *) * (strptr_len + 1));
+	*size = strptr_len;
 	if (!temp)
 		return (0);
 	temp[strptr_len] = 0;
 	return (temp);
 }
 
-char	*creat_str(const char *s, char c)
+int	count_len(const char *s, char c)
 {
-	size_t	str_len;
-	char	*temp;
+	int	str_len;
 
 	str_len = 0;
-	while (in_c(*s, c) && *s)
-		s++;
 	while (!in_c(*s, c) && *s)
 	{
 		s++;
 		str_len++;
 	}
-	temp = (char *)malloc(str_len + 1);
-	if (!temp)
-		return (0);
-	temp[str_len] = '\0';
-	return (temp);
+	return (str_len);
+}
+
+void	free_result(char **s, int index)
+{
+	while (index >= 0)
+	{
+		free(s[index]);
+		index--;
+	}
+	free(s);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	*str;
-	char	**str_ptr;
+	char	**result;
+	int		str_len;
+	int		word_len;
+	int		i;
 	int		index;
 
-	str_ptr = creat_strptr(s, c);
-	if (!str_ptr)
+	result = creat_strptr(s, c, &word_len);
+	if (!result)
 		return (0);
-	index = 0;
-	while (*s)
+	index = -1;
+	i = 0;
+	while (++index < word_len)
 	{
-		while (in_c(*s, c) && *s)
-			s++;
-		if (*s)
+		while (s[i] && in_c(s[i], c))
+			i++;
+		str_len = count_len(&s[i], c);
+		result[index] = ft_substr(s, i, str_len);
+		if (!result[index])
 		{
-			str = creat_str(s, c);
-			str_ptr[index] = str;
-			index++;
-			while (!in_c(*s, c) && *s)
-				*str++ = *s++;
+			free_result(result, index);
+			return (0);
 		}
+		i += str_len;
 	}
-	return (str_ptr);
+	return (result);
 }
-/* #include <stdio.h>
-int	main(void)
+/*
+#include <stdio.h>
+int main(void)
 {
-	char **res = ft_split("---sada-sd-asd-asd-as-das-d--",'-');
+	char 
+	char c = ' ';
+	char **res = ft_split(str, c);
+	printf("%d \n",count_word(str, c));
 	int i = 0;
-	while (res[i])
+	while(res[i])
 	{
 		printf("%s\n",res[i]);
 		i++;
 	}
+	
 }*/

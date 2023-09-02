@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 18:47:49 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/01 22:54:44 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/02 17:08:50 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,11 @@ char	*creat(const char *s1, const char *set, size_t *l, size_t *len)
 	right = ft_strlen(s1) - 1;
 	while (in_set(s1[left], set) && s1[left])
 		left++;
-	while (in_set(s1[right], set) && s1[right])
+	while (in_set(s1[right], set) && &s1[right] != s1)
 		right--;
 	temp_len = right - left + 1;
+	if (&s1[right] == s1)
+		temp_len = 0;
 	temp = (char *)malloc(temp_len + 1);
 	if (!temp)
 		return (0);
@@ -61,8 +63,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (temp);
 }
 /*
+#include <stdio.h>
 int main(void)
 {
-	char *s = ft_strtrim("  \t \t \n   \n\n\n\t"," \t\n");
+	char *s1 = " \t \t \n";
+	char *s2 = " \t\n";
+	char *s = ft_strtrim(s1,s2);
 	printf("%s",s);
+	
 }*/

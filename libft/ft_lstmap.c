@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 17:09:23 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/30 17:09:23 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/02 18:02:39 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_lst;
 	t_list	*temp;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (0);
-	curr = lst;
 	new_lst = 0;
+	curr = lst;
 	while (curr)
 	{
 		temp = ft_lstnew(f(curr->content));

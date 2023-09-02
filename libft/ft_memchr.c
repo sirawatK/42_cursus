@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/25 21:22:33 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/01 23:37:10 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/02 15:15:17 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*ch;
+	unsigned char		cast;
 
 	ch = s;
+	cast = c;
 	while (n--)
 	{
-		if (*ch == (unsigned char)c)
+		if (*ch == cast)
 		{
 			return ((void *)ch); 
 		}

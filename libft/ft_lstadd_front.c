@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 19:41:44 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/28 19:41:44 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/03 15:20:51 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (!lst || !new)
+		return ;
 	if (!*lst)
 	{
 		*lst = new;

@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 22:11:17 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/28 22:11:17 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/03 15:47:00 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*curr;
 
+	if (!lst || !new)
+		return ;
 	if (!*lst)
 	{
 		*lst = new;
-		return ;
 	}
-	curr = *lst;
-	while (curr->next)
-		curr = curr->next;
-	curr->next = new;
+	else
+	{
+		curr = ft_lstlast(*lst);
+		curr->next = new;
+	}
 }
 /*
 #include <stdio.h>

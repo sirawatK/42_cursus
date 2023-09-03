@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:04:20 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/08/28 20:04:20 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/03 15:21:02 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_lstsize(t_list *lst)
 	int		i;
 	t_list	*curr;
 
+	if (!lst)
+		return (0);
 	i = 0;
 	curr = lst;
 	while (curr)

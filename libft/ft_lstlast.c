@@ -6,7 +6,7 @@
 /*   By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 20:11:23 by sikulnok          #+#    #+#             */
-/*   Updated: 2023/09/03 15:20:58 by sikulnok         ###   ########.fr       */
+/*   Updated: 2023/09/08 19:06:30 by sikulnok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstlast(t_list *lst)
 	if (!lst)
 		return (0);
 	curr = lst;
-	while (curr && curr->next)
+	while (curr->next)
 	{
 		curr = curr->next;
 	}

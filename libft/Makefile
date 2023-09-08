@@ -6,7 +6,7 @@
 #    By: sikulnok <sikulnok@student.42bangkok.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/30 22:18:52 by sikulnok          #+#    #+#              #
-#    Updated: 2023/09/02 15:14:49 by sikulnok         ###   ########.fr        #
+#    Updated: 2023/09/08 19:09:21 by sikulnok         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,4 +45,4 @@ fclean: clean
 
 re:	fclean all
 
-.PHONY:	$(NAME) all bonus clean fclean re
+.PHONY:	all bonus clean fclean re
